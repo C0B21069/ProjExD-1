@@ -60,7 +60,7 @@ def main():
     clock = pg.time.Clock()
     while True:
         time = int(pg.time.get_ticks() / 1000)
-        text = font.render("タイム:" +str(time), True, (0, 0, 0))
+        text = font.render("Time: " +str(time), True, (0, 0, 0))
         scrn_sfc.blit(bg_sfc, bg_rct)
         #ゴールポールの描画
         pg.draw.rect(scrn_sfc,(255,255,255),(750,100,5,320))
