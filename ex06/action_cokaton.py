@@ -3,12 +3,14 @@ import sys
 from random import randint
 import tkinter.messagebox as tkm
 
+
 check_over = False
 check_clear = False
 Ground = 360
 canJump = True
 vy = 0 # y方向の速度
 gr = 0.2 # 重力加速度
+
 
 class Gamefinish:
     def __init__(self, title, wh, goimg):
@@ -29,11 +31,13 @@ def check_bound(obj_rct, scr_rct):
         yoko = -1
     return yoko
 
+
 def janp():
     global canJump, vy
     if canJump:
         canJump = False
         vy = -10 # 初速を与える
+
 
 def game_clear():
     game = Gamefinish("Gameclear", (700, 400),"ex06/game_clear.png")
@@ -41,6 +45,7 @@ def game_clear():
     pg.display.update()
     clock = pg.time.Clock()
     clock.tick(0.2)
+
 
 def game_over():
     game = Gamefinish("Gameovar", (700, 400),"ex06/fig/game_over.png")
@@ -53,8 +58,10 @@ def game_over():
 def main():
     global gr, vy, canJump, Ground, check_clear
     #(斎藤登担当)
+    #タイム表示
     time = int(pg.time.get_ticks() / 1000)
     font = pg.font.SysFont("hg正楷書体pro", 30)
+    #基本画面の表示
     global gr, vy, canJump, Ground, check_clear, check_over
     pg.display.set_caption("アクションこうかとん")
     scrn_sfc = pg.display.set_mode((800, 480))
